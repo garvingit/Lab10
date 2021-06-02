@@ -16,7 +16,7 @@
 
 <body>
   <header>
-    <a href="secondSplit.html">Second Split</a>
+    <a href="index.html">Double Column Split</a>
     <h1>Journal Entries</h1>
     <img src="./styles/settings.svg" alt="settings" width=40 height=40>
   </header>
@@ -25,6 +25,15 @@
 
   <entry-page></entry-page>
 
+    <!-- journal-entry web component -->
+    <script src="./components/journal-entry.js" type="module"></script>
+    <script src="./components/entry-page.js" type="module"></script>
+  
+    <!-- Router Script -->
+    <script src="./scripts/router.js" type="module"></script>
+  
+    <!-- Main Script -->
+    <script src="./scripts/script.js" type="module"></script>
   <!-- Some polyfills to ensure we have promises. -->
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
   <!-- Split SDK loaded via CDN. -->
@@ -45,14 +54,13 @@
         }
       });
       var client = factory.client();
-
       client.on(client.Event.SDK_READY, function() {
-        var treatment = client.getTreatment('double_split_1');
+        var treatment = client.getTreatment('dark_mode_split');
         let main = document.querySelector('main');
         if (treatment === 'on') {
-          main.classList.add("double-column");
+          document.body.classList.add("dark-mode");
         } else if (treatment === 'off') {
-          main.classList.remove("double-column");
+          document.body.classList.remove("dark-mode");
         } else {
           // Insert code for control treatment
         }
@@ -63,15 +71,7 @@
       });
       })();
   </script>
-  <!-- journal-entry web component -->
-  <script src="./components/journal-entry.js" type="module"></script>
-  <script src="./components/entry-page.js" type="module"></script>
 
-  <!-- Router Script -->
-  <script src="./scripts/router.js" type="module"></script>
-
-  <!-- Main Script -->
-  <script src="./scripts/script.js" type="module"></script>
 
 
 </body>

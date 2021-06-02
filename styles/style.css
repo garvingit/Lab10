@@ -156,3 +156,18 @@ body.single-entry main {
   width: 100%;
 }
 /* Feature Flag End - Double Column */
+
+
+body.dark-mode{
+  background: #585858;
+}
+body.dark-mode header{
+  background: #3d3d3d;
+}
+body.dark-mode h1{
+  color: #dddddd;
+}
+
+body.dark-mode a{
+  color: white;
+}
